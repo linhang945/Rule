@@ -3,7 +3,8 @@
 #!system=mac
 
 [Rule]
-DOMAIN-SUFFIX,google.com,REJECT
+
+
 # > Download
 PROCESS-NAME,aria2c,DIRECT
 PROCESS-NAME,fdm,DIRECT
