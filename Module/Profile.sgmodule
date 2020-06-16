@@ -118,7 +118,7 @@ hide-udp=0
 
 
 [Rule]
-DOMAIN-SUFFIX,baidu.com,REJECT
+
 
 ############################   Rulesets  ############################ 
 
