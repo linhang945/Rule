@@ -120,17 +120,6 @@ hide-udp=0
 [Rule]
 DOMAIN-SUFFIX,baidu.com,REJECT
 
-# > Download
-PROCESS-NAME,aria2c,DIRECT
-PROCESS-NAME,fdm,DIRECT
-PROCESS-NAME,Folx,DIRECT
-PROCESS-NAME,NetTransport,DIRECT
-PROCESS-NAME,Thunder,DIRECT
-PROCESS-NAME,Transmission,DIRECT
-PROCESS-NAME,uTorrent,DIRECT
-PROCESS-NAME,WebTorrent,DIRECT
-PROCESS-NAME,WebTorrent Helper,DIRECT
-
 ############################   Rulesets  ############################ 
 
 # Unbreak 后续规则修正
