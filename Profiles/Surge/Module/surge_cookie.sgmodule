@@ -2,6 +2,7 @@
 #!desc=iOS Cookies 模块配置
 #!system=ios
 
+[Script]
 Rewrite: 百度签到 = type=http-request,pattern=^https?:\/\/tieba\.baidu\.com\/?.?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js
 Rewrite: 字幕组 = type=http-request,pattern=^http:\/\/ios.zmzapi.com\/index.php.*a=(mobile_)?login,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js
 Rewrite: 字幕组 = type=http-request,pattern=^https?:\/\/(www\.)?rrys2019\.com\/?.?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js
