@@ -1,0 +1,6 @@
+#!name=Wifi_Proxy
+#!desc=Wifi_Proxy
+
+[Script]
+SSID助手 = debug=1,script-path=https://raw.githubusercontent.com/linhang945/Rule/master/Profiles/Surge/Scripts/Wifi_Proxy.js,type=event,event-name=network-changed,control-api=true
+
