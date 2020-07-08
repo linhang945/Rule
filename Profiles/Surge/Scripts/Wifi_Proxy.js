@@ -8,23 +8,25 @@ PS:记得自己修改WIFI名称
 Rewrite和Scripting依然有效
 */
 
-var wifiname = $network.wifi.ssid;
-var proxywifi = ["L1n"];
-for (var i = 0; i < proxywifi.length; i++) {
-	if (wifiname==proxywifi[i]){
-		$surge.setOutboundMode("direct");
-		
-		setTimeout(function(){$notification.post("Meeta_Remind","您目前处于WIFI-Proxy"+"SSID: "+wifiname,"Surge已自动变为直连模式");}, 3000);
-		break;
-		
-	};
-	if (i==proxywifi.length-1){
-		$surge.setOutboundMode("rule");
-		
-		setTimeout(function(){$notification.post("Meeta_Remind","Surge已自动变为规则模式","");}, 3000);
-	
-	}
-	
-	
-};
+const SSID = $network.wifi.ssid;
+const proxywifi = !$persistentStore.read("lkWifiSsids")?["L1n"]:JSON.parse($persistentStore.read("lkWifiSsids"));
+let res = proxywifi.some(val => val === (!!SSID ? SSID : "cellular"));
+let lkWifiLast = !$persistentStore.read("lkWifiLast")?"abcdefghijklmnopqrstuvwxyz":$persistentStore.read("lkWifiLast");
+if (lkWifiLast!=(!!SSID ? SSID : "cellular")){
+    !$persistentStore.write((!!SSID ? SSID : "cellular"), "lkWifiLast")
+    if (res) {
+        $surge.setOutboundMode("direct");
+        notify(1);
+    } else {
+        $surge.setOutboundMode("rule");
+        notify(0);
+    }
+}
+
+function notify(mode) {
+    setTimeout(function () {
+        !!mode ? $notification.post("Wi-Fi助手", "切换到【直接连接】", `${!!SSID ? "你的Wi-Fi：【" + SSID + "】" : "你正在使用流量"}`) : $notification.post("Wi-Fi助手", "切换到【规则模式】", `${!!SSID ? "你的Wi-Fi：【" + SSID + "】" : "你正在使用流量"}`)
+    })
+}
+
 $done();
