@@ -1,0 +1,6 @@
+#!name=Wifi Module
+#!desc=Wifi切换模块
+
+
+[SSID Setting]
+"L1n" suspend=true
