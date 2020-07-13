@@ -1,5 +1,5 @@
-#!name=Wifi Module
-#!desc=Wifi切换模块
+#!name=Wifi Mode
+#!desc=Change Wifi Mode
 
 
 [SSID Setting]
