@@ -1,5 +1,5 @@
-#!name=Surge运行模式
-#!desc=根据当前网络自动切换模式
+#!name=Surge Runing Mode
+#!desc=Change mode according to current network
 
 [Script]
 
