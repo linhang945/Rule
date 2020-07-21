@@ -5,7 +5,7 @@
 hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com
 
 [Script]
-# JD历史价格
+# JD 历史价格
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 # Netflix 剧集评分
 http-request ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
