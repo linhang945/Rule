@@ -1,5 +1,6 @@
 #!name= Surge Scripts
-#!desc= Display jd historical price + Display netflix ratings
+#!desc= Display JD Historical Price + Netflix Ratings
+#!system=ios
 
 [MITM]
 hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com

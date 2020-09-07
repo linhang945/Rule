@@ -1,6 +1,0 @@
-#!name=Wifi Mode
-#!desc=Change Wifi Mode
-
-
-[SSID Setting]
-"L1n" suspend=true
