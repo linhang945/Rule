@@ -1,0 +1,12 @@
+payload:
+# Something Block
+# > fa lun gong
+  - DOMAIN-SUFFIX,ntdtv.com
+  - DOMAIN-SUFFIX,falundafa.org
+  - DOMAIN-SUFFIX,theepochtimes.com
+  - DOMAIN-SUFFIX,minghui.org
+# > zang du
+  - DOMAIN-SUFFIX,dalailama.com
+  - DOMAIN-SUFFIX,tibet.net
+
+
