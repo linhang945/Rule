@@ -4,6 +4,9 @@ DOMAIN-SUFFIX,ntdtv.com,REJECT
 DOMAIN-SUFFIX,falundafa.org,REJECT
 DOMAIN-SUFFIX,minghui.org,REJECT
 DOMAIN-SUFFIX,epochtimes.com,REJECT
+DOMAIN-SUFFIX,dafahao.com,REJECT
+DOMAIN-SUFFIX,dongtaiwan.com,REJECT
+DOMAIN-SUFFIX,wujieliulan.com,REJECT
 # zang du
 DOMAIN-SUFFIX,dalailama.com,REJECT
 DOMAIN-SUFFIX,tibet.net,REJECT
