@@ -3,7 +3,7 @@
 DOMAIN-SUFFIX,ntdtv.com,REJECT
 DOMAIN-SUFFIX,falundafa.org,REJECT
 DOMAIN-SUFFIX,minghui.org,REJECT
-DOMAIN-SUFFIX,theepochtimes.com,REJECT
+DOMAIN-SUFFIX,epochtimes.com,REJECT
 # zang du
 DOMAIN-SUFFIX,dalailama.com,REJECT
 DOMAIN-SUFFIX,tibet.net,REJECT

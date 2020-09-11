@@ -3,7 +3,7 @@ payload:
 # > fa lun gong
   - DOMAIN-SUFFIX,ntdtv.com
   - DOMAIN-SUFFIX,falundafa.org
-  - DOMAIN-SUFFIX,theepochtimes.com
+  - DOMAIN-SUFFIX,epochtimes.com
   - DOMAIN-SUFFIX,minghui.org
 # > zang du
   - DOMAIN-SUFFIX,dalailama.com
