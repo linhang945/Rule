@@ -1,12 +1,34 @@
 # Something Block
-# > fa lun gong
-DOMAIN-SUFFIX,ntdtv.com
-DOMAIN-SUFFIX,falundafa.org
-DOMAIN-SUFFIX,minghui.org
-DOMAIN-SUFFIX,epochtimes.com
-DOMAIN-SUFFIX,dafahao.com
-DOMAIN-SUFFIX,dongtaiwan.com
-DOMAIN-SUFFIX,wujieliulan.com
-# zang du
-DOMAIN-SUFFIX,dalailama.com
-DOMAIN-SUFFIX,tibet.net
+DOMAIN-KEYWORD,mingjinglive
+DOMAIN-KEYWORD,chinaaid
+DOMAIN-KEYWORD,botanwang
+DOMAIN-KEYWORD,xinsheng
+DOMAIN-KEYWORD,breakgfw
+DOMAIN-KEYWORD,chengmingmag
+DOMAIN-KEYWORD,xizang-zhiye
+DOMAIN-KEYWORD,qi-gong
+DOMAIN-KEYWORD,mhradio
+DOMAIN-KEYWORD,edoors
+DOMAIN-KEYWORD,renminbao
+DOMAIN-KEYWORD,soundofhope
+DOMAIN-KEYWORD,zhengjian
+DOMAIN-KEYWORD,dafahao
+DOMAIN-KEYWORD,minghui
+DOMAIN-KEYWORD,dafahao
+DOMAIN-KEYWORD,dongtaiwan
+DOMAIN-KEYWORD,epochtimes
+DOMAIN-KEYWORD,ntdtv
+DOMAIN-KEYWORD,falundafa
+DOMAIN-KEYWORD,wujieliulan
+DOMAIN-KEYWORD,aboluowang
+DOMAIN-KEYWORD,bannedbook
+DOMAIN-KEYWORD,secretchina
+DOMAIN-KEYWORD,dajiyuan
+DOMAIN-KEYWORD,boxun
+DOMAIN-KEYWORD,chinadigitaltimes
+DOMAIN-KEYWORD,huaglad
+DOMAIN-KEYWORD,dwnews
+DOMAIN-KEYWORD,creaders
+DOMAIN-KEYWORD,oneplusnews
+DOMAIN-KEYWORD,huaglad
+DOMAIN-KEYWORD,tibet
