@@ -1,0 +1,2 @@
+shadowsocks = 163.plusmedia.xeton.dev:58080, method=rc4-md5, password=ieG9l1nte5eo7IBZas84jLi, tag=🇨🇳 Netease China 1
+shadowsocks = 163.plusmedia.xeton.dev:58081, method=rc4-md5, password=ieG9l1nte5eo7IBZas84jLi, tag=🇨🇳 Netease China 2
