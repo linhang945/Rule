@@ -1,6 +1,36 @@
 payload:
 # Something Block
-# > fa lun gong
+  - DOMAIN-SUFFIX,mingjinglive.com
+  - DOMAIN-SUFFIX,chinaaid.org
+  - DOMAIN-SUFFIX,botanwang.com
+  - DOMAIN-SUFFIX,xinsheng.net
+  - DOMAIN-SUFFIX,breakgfw.com
+  - DOMAIN-SUFFIX,chengmingmag.com
+  - DOMAIN-SUFFIX,xizang-zhiye.org
+  - DOMAIN-SUFFIX,qi-gong.me
+  - DOMAIN-SUFFIX,mhradio.org
+  - DOMAIN-SUFFIX,edoors.com
+  - DOMAIN-SUFFIX,renminbao.com
+  - DOMAIN-SUFFIX,soundofhope.org
+  - DOMAIN-SUFFIX,zhengjian.org
+  - DOMAIN-SUFFIX,dafahao.com
+  - DOMAIN-SUFFIX,minghui.org
+  - DOMAIN-SUFFIX,dongtaiwan.com
+  - DOMAIN-SUFFIX,epochtimes.com
+  - DOMAIN-SUFFIX,ntdtv.com
+  - DOMAIN-SUFFIX,falundafa.org
+  - DOMAIN-SUFFIX,wujieliulan.com
+  - DOMAIN-SUFFIX,aboluowang.com
+  - DOMAIN-SUFFIX,bannedbook.org
+  - DOMAIN-SUFFIX,secretchina.com
+  - DOMAIN-SUFFIX,dajiyuan.com
+  - DOMAIN-SUFFIX,boxun.com
+  - DOMAIN-SUFFIX,chinadigitaltimes.net
+  - DOMAIN-SUFFIX,huaglad.com
+  - DOMAIN-SUFFIX,dwnews.com
+  - DOMAIN-SUFFIX,creaders.net
+  - DOMAIN-SUFFIX,oneplusnews.com
+  - DOMAIN-SUFFIX,tibet.com
   - DOMAIN-KEYWORD,mingjinglive
   - DOMAIN-KEYWORD,chinaaid
   - DOMAIN-KEYWORD,botanwang
@@ -16,7 +46,6 @@ payload:
   - DOMAIN-KEYWORD,zhengjian
   - DOMAIN-KEYWORD,dafahao
   - DOMAIN-KEYWORD,minghui
-  - DOMAIN-KEYWORD,dafahao
   - DOMAIN-KEYWORD,dongtaiwan
   - DOMAIN-KEYWORD,epochtimes
   - DOMAIN-KEYWORD,ntdtv
@@ -28,7 +57,6 @@ payload:
   - DOMAIN-KEYWORD,dajiyuan
   - DOMAIN-KEYWORD,boxun
   - DOMAIN-KEYWORD,chinadigitaltimes
-  - DOMAIN-KEYWORD,huaglad
   - DOMAIN-KEYWORD,dwnews
   - DOMAIN-KEYWORD,creaders
   - DOMAIN-KEYWORD,oneplusnews
