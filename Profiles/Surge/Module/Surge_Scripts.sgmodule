@@ -1,5 +1,5 @@
 #!name= Some Surge Scripts
-#!desc= Display JD Historical Price + Netflix Ratings
+#!desc= Display JD Historical Price & Netflix Ratings
 #!system=ios
 
 [MITM]
