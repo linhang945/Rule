@@ -2,12 +2,11 @@ payload:
 # Emby
 # > 普拉斯影业 体验服
   - DOMAIN-SUFFIX,emby-best.xeton.dev
+  - DOMAIN-SUFFIX,bgp.emby.mickeycloud.com 
   - DOMAIN-SUFFIX,emby.xeton.dev
   - DOMAIN-SUFFIX,jellyfin.xeton.dev
   - DOMAIN-SUFFIX,movie.xeton.dev
   - DOMAIN-SUFFIX,servers.xeton.dev
-  - DOMAIN-SUFFIX,kodi.xeton.dev
-  - DOMAIN-SUFFIX,plus.xeton.dev
 # > 机场专属服
   - DOMAIN-SUFFIX,emby.yoyu.ltd
   - DOMAIN-SUFFIX,emby.nyancat.net
