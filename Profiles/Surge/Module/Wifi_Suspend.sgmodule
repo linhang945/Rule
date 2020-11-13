@@ -1,0 +1,6 @@
+#!name=Wifi Suspend
+#!desc=macOS Wifi Suspend
+#!system=mac
+
+[SSID Setting]
+WiFi-SSID suspend=true
