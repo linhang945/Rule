@@ -3,15 +3,15 @@
 #!system=ios
 
 [Script]
-#bilibili
+# bilibili
 cron "1 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.js
 cron "1 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.silver2coin.js
-# JD签到
-cron "3 0 * * *" wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
-# 百度贴吧
-cron "2 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js
 # 吾爱破解
 cron "1 0 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
+# 百度贴吧
+cron "2 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js
+# JD签到
+cron "3 0 * * *" wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
 
 [MITM]
 hostname = %INSERT%, tieba.baidu.com, api.m.jd.com, *.bilibili.com, www.52pojie.cn
