@@ -1,5 +1,5 @@
 #!name=Tun Only
-#!desc=兼容模式
+#!desc=解决部分App检测代理软件问题
 #!system=ios
 
 [General]
