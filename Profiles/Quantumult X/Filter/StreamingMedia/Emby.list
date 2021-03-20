@@ -1,8 +1,0 @@
-# Emby
-# > 普拉斯影业 体验服
-DOMAIN-SUFFIX,emby.xeton.dev,Emby
-DOMAIN-SUFFIX,jellyfin.xeton.dev,Emby
-DOMAIN-SUFFIX,movie.xeton.dev,Emby
-DOMAIN-SUFFIX,servers.xeton.dev,Emby
-# > 其他
-DOMAIN-SUFFIX,emby.otakudrive.life,Emby
