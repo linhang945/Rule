@@ -3,7 +3,7 @@
 #!system=ios
 
 [MITM]
-hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com
+hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com,api.gamer.com.tw
 
 [Script]
 # JD 历史价格
