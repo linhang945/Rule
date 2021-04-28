@@ -54,7 +54,7 @@ const run = $.isSurge ? SwitchRegion() : QueryRating();
 async function SwitchRegion() {
 	const Group = $.read('BiliBili') ; //Your blibli policy group name.
 	const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
-	const TW = $.read('BiliArea_TW') || '🇨🇳 Taiwam'; //Your Taiwan sub-policy name.
+	const TW = $.read('BiliArea_TW') || '🇨🇳 Taiwan'; //Your Taiwan sub-policy name.
 	const HK = $.read('BiliArea_HK') || '🇭🇰 Hong Kong'; //Your HongKong sub-policy name.
 	const current = await $.getPolicy(Group) || 'Policy error ⚠️';
 	const area = (() => {
