@@ -46,10 +46,8 @@ ip-cidr, 203.107.1.1/24, reject
 
 ***************************/
 
-let body = JSON.parse($response.body);
-const $ = nobyda();
-const play = body.data || body.result || {};
-const run = $.isSurge ? SwitchRegion() : QueryRating();
+let $ = nobyda();
+let run = EnvInfo();
 
 async function SwitchRegion() {
 	const Group = $.read('BiliArea_Policy') || 'BiliBili' ; //Your blibli policy group name.
@@ -58,9 +56,9 @@ async function SwitchRegion() {
 	const HK = $.read('BiliArea_HK') || '🇭🇰 Hong Kong'; //Your HongKong sub-policy name.
 	const current = await $.getPolicy(Group) || 'Policy error ⚠️';
 	const area = (() => {
-		if (/\u50c5[\u4e00-\u9fa5]+\u6e2f/.test(play.title)) {
+		if (/\u50c5[\u4e00-\u9fa5]+\u6e2f|%20%E6%B8%AF&/.test(play)) {
 			if (current != HK) return HK;
-		} else if (/\u50c5[\u4e00-\u9fa5]+\u53f0/.test(play.title)) {
+		} else if (/\u50c5[\u4e00-\u9fa5]+\u53f0|%20%E5%8F%B0&/.test(play)) {
 			if (current != TW) return TW;
 		} else if (current != CN) return CN;
 	})()
@@ -68,18 +66,31 @@ async function SwitchRegion() {
 	if (area) {
 		const change = await $.setPolicy(Group, area);
 		const notify = $.read('BiliAreaNotify') === 'true';
-		if (!notify) $.notify(play.title || ``, ``, `${current}  =>  ${area}  =>  ${change?`🟢`:`🔴`}`);
-		if (change) {
-			$done(); //Kill the connection. Due to the characteristics of Surge, it will auto reconnect with the new policy.
-		} else {
-			QueryRating();
-		}
+		const msg = `${current}  =>  ${change?area:'sub-policy error ⚠️'}  =>  ${change?`🟢`:`🔴`}`;
+		if (!notify) $.notify(/^http/.test(play) || !play ? `` : play, ``, msg);
+		else console.log(`${/^http/.test(play)||!play?``:play}\n${msg}`);
+		if (change) return true;
+	}
+	return false;
+}
+
+function EnvInfo() {
+	if (typeof($response) !== 'undefined') {
+		const raw = JSON.parse($response.body);
+		const data = raw.data || raw.result || {};
+		//if surge or loon, $done() will auto reconnect with the new policy
+		SwitchRegion(data.title)
+			.then(s => s && !$.isQuanX ? $done() : QueryRating(raw, data));
 	} else {
-		QueryRating();
+		const raw = $request.url;
+		const res = {
+			url: raw.replace(/%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&/g, '&')
+		};
+		SwitchRegion(raw).then(() => $done(res));
 	}
 }
 
-async function QueryRating() {
+async function QueryRating(body, play) {
 	try {
 		const ratingEnabled = $.read('BiliDoubanRating') === 'false';
 		if (!ratingEnabled && play.title && body.data && body.data.badge_info) {
@@ -90,6 +101,9 @@ async function QueryRating() {
 			const exYear = body.data.publish.release_date_show.split(/^(\d{4})/)[1];
 			const filterInfo = [play.title, play.origin_name, play.staff.info + play.actor.info, exYear];
 			const [rating, folk, name, id, other] = ExtractMovieInfo([...t1, ...t2], filterInfo);
+			const limit = JSON.stringify(body.data.modules)
+				.replace(/"\u53d7\u9650"/g, `""`).replace(/("area_limit":)1/g, '$10');
+			body.data.modules = JSON.parse(limit);
 			body.data.detail = body.data.new_ep.desc.replace(/连载中,/, '');
 			body.data.badge_info.text = `⭐️ 豆瓣：${!$.is403?`${rating||'无评'}分 (${folk||'无评价'})`:`查询频繁！`}`;
 			body.data.evaluate = `${body.data.evaluate||''}\n\n豆瓣评分搜索结果: ${JSON.stringify(other,0,1)}`;
@@ -129,7 +143,7 @@ function ExtractMovieInfo(ret, fv) {
 			return Boolean(t.accuracy);
 		});
 	let x = {}; //assign most similar
-	const f2 = f1.reduce((p, c, i) => c.accuracy > p ? (x = c, c.accuracy) : p, 0);
+	const f2 = f1.reduce((p, c) => c.accuracy > p ? (x = c, c.accuracy) : p, 0);
 	return [x.rating, x.folk, x.name, x.id, f1];
 }
 
@@ -148,7 +162,7 @@ function GetRawInfo(t) {
 			if (error) {
 				console.log(`Douban rating: \n${t}\nRequest error: ${error}\n`);
 			} else {
-				if (resp.status == 403) $.is403 = true;
+				if (/\u767b\u5f55<\/a>\u540e\u91cd\u8bd5\u3002/.test(data)) $.is403 = true;
 				let s = data.replace(/\n| |&#\d{2}/g, '')
 					.match(/\[\u7535\u5f71\].+?subject-cast\">.+?<\/span>/g) || [];
 				for (let i = 0; i < s.length; i++) {
@@ -194,18 +208,31 @@ function nobyda() {
 		return response;
 	}
 	const getPolicy = (groupName) => {
+		const m = `Version error ⚠️`
 		if (isSurge) {
-			if (typeof($httpAPI) === 'undefined')
-				return `切换策略失败, 请升级您的Surge\n`;
+			if (typeof($httpAPI) === 'undefined') return m;
 			return new Promise((resolve) => {
 				$httpAPI("GET", "v1/policy_groups/select", {
 					group_name: encodeURIComponent(groupName)
-				}, (body) => resolve(body.policy))
+				}, (b) => resolve(b.policy))
 			})
 		}
 		if (isLoon) {
-			const get = JSON.parse($config.getConfig());
-			return get.policy_select[groupName];
+			if (typeof($config.getPolicy) === 'undefined') return m;
+			const getName = $config.getPolicy(groupName);
+			return getName;
+		}
+		if (isQuanX) {
+			if (typeof($configuration) === 'undefined') return m;
+			return new Promise((resolve) => {
+				$configuration.sendMessage({
+					action: "get_policy_state"
+				}).then(b => {
+					if (b.ret && b.ret[groupName]) {
+						resolve(b.ret[groupName][1]);
+					} else resolve();
+				}, () => resolve());
+			})
 		}
 	}
 	const setPolicy = (group, policy) => {
@@ -214,12 +241,22 @@ function nobyda() {
 				$httpAPI("POST", "v1/policy_groups/select", {
 					group_name: group,
 					policy: policy
-				}, (body) => resolve(!body.error))
+				}, (b) => resolve(!b.error))
 			})
 		}
-		if (isLoon) {
+		if (isLoon && typeof($config.getPolicy) !== 'undefined') {
 			const set = $config.setSelectPolicy(group, policy);
-			return getPolicy(group) === policy;
+			return set;
+		}
+		if (isQuanX && typeof($configuration) !== 'undefined') {
+			return new Promise((resolve) => {
+				$configuration.sendMessage({
+					action: "set_policy_state",
+					content: {
+						[group]: policy
+					}
+				}).then((b) => resolve(!b.error), () => resolve());
+			})
 		}
 	}
 	const get = (options, callback) => {
@@ -240,6 +277,7 @@ function nobyda() {
 		getPolicy,
 		setPolicy,
 		isSurge,
+		isQuanX,
 		isLoon,
 		notify,
 		read,
