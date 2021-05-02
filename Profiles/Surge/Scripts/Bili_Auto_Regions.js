@@ -49,7 +49,7 @@ ip-cidr, 203.107.1.1/24, reject
 let $ = nobyda();
 let run = EnvInfo();
 
-async function SwitchRegion() {
+async function SwitchRegion(play) {
 	const Group = $.read('BiliArea_Policy') || 'BiliBili' ; //Your blibli policy group name.
 	const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
 	const TW = $.read('BiliArea_TW') || '🇨🇳 Taiwan'; //Your Taiwan sub-policy name.
