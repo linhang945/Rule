@@ -1,5 +1,5 @@
 #!name= Netflix Ratings
-#!desc= IMDb & DOUBAN Scores
+#!desc= IMDb & 豆瓣 评分
 #!system=ios
 
 [MITM]
