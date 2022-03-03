@@ -1,5 +1,5 @@
 #!name= Netflix Ratings
-#!desc= IMDB & DOUBAN Ratings
+#!desc= IMDb & DOUBAN Scores
 #!system=ios
 
 [MITM]
