@@ -3,7 +3,7 @@
 #!system=ios
 
 [MITM]
-hostname = %APPEND% api.m.jd.com,ios.prod.ftl.netflix.com
+hostname = %APPEND% ios.prod.ftl.netflix.com
 
 [Script]
 # Netflix 剧集评分
