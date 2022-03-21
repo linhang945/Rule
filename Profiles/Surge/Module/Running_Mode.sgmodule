@@ -1,6 +1,6 @@
 #!name=Runing Mode
 #!desc=Change Runing Mode According To Current Network
 
-[Script]
+[Rule]
 
-event network-changed script-path=https://raw.githubusercontent.com/linhang945/Rule/master/Profiles/Surge/Scripts/Running_Mode.js
+%INSERT% SUBNET,L1n,DIRECT
