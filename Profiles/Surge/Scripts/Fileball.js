@@ -7,7 +7,7 @@ Fileball挂载阿里云盘
 force-http-engine-hosts = %APPEND% aliyun.example.com:0
 
 [Script]
-阿里云盘 = type=http-request,pattern=^http:\/\/aliyun\.example\.com,requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/ali.js,max-size=0,debug=0,argument=accessToken=
+阿里云盘 = type=http-request,pattern=^http:\/\/aliyun\.example\.com,requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/ali.js,max-size=0,debug=0
 
 作者：@小白脸 @Chosen Ome
 使用方法： 
@@ -21,8 +21,9 @@ Fileball挂载图标：https://raw.githubusercontent.com/githubdulong/Script/mas
 
 var url = $request.url;
 //console.log(url);
-var accessToken = $persistentStore.read(args.accessToken) ?? "";
-var driveId = $persistentStore.read("testtest") ?? "";
+var accessToken = $persistentStore.read("ali_access_token") ?? "";
+var driveId = $persistentStore.read("ali_drive_id") ?? "";
+
 
 var headers = {
 	Referer: "https://www.aliyundrive.com/",
