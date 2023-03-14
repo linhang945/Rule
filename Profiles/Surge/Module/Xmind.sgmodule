@@ -1,0 +1,9 @@
+#!name=Xmind
+#!desc=Xmind Pro
+
+[MITM]
+hostname = www.xmind.cn, www.xmind.net
+
+
+[Script]
+Xmind Pro = https:\/\/www\.xmind\.cn\/\_res\/devices url script-response-body https://raw.githubusercontent.com/zwf234/rules/master/js/xmind.js
