@@ -1,0 +1,15 @@
+#!name= NBA直播流 解析
+#!desc= NBA直播流 解析
+
+[Script]
+# NBA 视频 & 电视剧接口解析
+video-parser-bestv = type=http-response,pattern=https:\/\/bp-api\.bestv\.(?:com\.cn|cn)\/cms\/api\/(live\/studio\/id\/v4|c\/player\/common),requires-body=true,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+# 360 HTML 视频页面解析
+video-parser-360 = type=http-response,pattern=^https?:\/\/360\.com\/(?:video|nba\.m3u|dianshi\.m3u)$,requires-body=true,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+
+[URL Rewrite]
+^https:\/\/bp-api\.bestv\.cn\/cms\/api\/advertise\/project\/advertise\/popup\/scene$ _ reject
+^https:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2$ _ reject
+
+[MITM]
+hostname = %APPEND% bp-api.bestv.com.cn, bp-api.bestv.cn, 360.com
