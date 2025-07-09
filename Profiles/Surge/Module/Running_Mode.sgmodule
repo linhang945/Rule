@@ -2,7 +2,7 @@
 #!desc=Change Runing Mode According To Current Network
 
 [Rule]
-IP-CIDR,10.10.10.0/24,Wireguard
+IP-CIDR,10.10.10.0/24,Wireguard,no-resolve
 SUBNET,L1n,DIRECT
 SUBNET,L1n-2.4G,DIRECT
 SUBNET,CMCC-502_5G,DIRECT
