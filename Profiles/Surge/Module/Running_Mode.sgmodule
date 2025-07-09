@@ -3,6 +3,7 @@
 
 [Rule]
 IP-CIDR,10.10.10.0/24,Wireguard,no-resolve
+IP-CIDR,10.10.20.0/24,Wireguard,no-resolve
 SUBNET,L1n,DIRECT
 SUBNET,L1n-2.4G,DIRECT
 SUBNET,CMCC-502_5G,DIRECT
